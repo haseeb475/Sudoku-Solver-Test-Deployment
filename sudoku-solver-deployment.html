@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sudoku Solver</h1>
+        
+        <div class="info">
+            Select a grid size and fill in the known numbers. The solver will help you complete the puzzle.
+        </div>
+        
+        <div class="setup">
+            <label for="gridSize">Grid Size: </label>
+            <select id="gridSize">
+                <option value="4">4x4 (2×2 boxes)</option>
+                <option value="6">6x6 (2×3 boxes)</option>
+                <option value="8">8x8 (2×4 boxes)</option>
+                <option value="9" selected>9x9 (3×3 boxes)</option>
+                <option value="12">12x12 (3×4 boxes)</option>
+                <option value="16">16x16 (4×4 boxes)</option>
+                <option value="25">25x25 (5×5 boxes)</option>
+            </select>
+            <button onclick="createGrid()">Create Grid</button>
+            <div class="size-info">Box size will be automatically calculated based on grid dimensions</div>
+        </div>
+        
+        <div class="controls">
+            <button onclick="solveAll()">Solve All</button>
+            <button onclick="solveCell()">Solve Cell</button>
+            <button onclick="resetGrid()">Reset</button>
+        </div>
+        
+        <div id="grid" class="grid"></div>
+        
+        <div class="solutions-nav">
+            <button onclick="previousSolution()">Previous</button>
+            <span id="solutionCount">Solution 1 of 1</span>
+            <button onclick="nextSolution()">Next</button>
+        </div>
+        
+        <div id="error" class="error"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
